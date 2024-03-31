@@ -10,7 +10,7 @@ def commit(commit_message):
     try:
         subprocess.run(["git", "add", "."], check=True)
         subprocess.run(["git", "commit", "-m", commit_message], check=True)
-        subprocess.run(["git", "push"], check=True)
+        subprocess.run(["git", "push","upstream","main"], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")
         sys.exit(1)
@@ -22,7 +22,7 @@ def git():
     try:
         subprocess.run(["git", "add", "."], check=True)
         subprocess.run(["git", "commit", "-m", commit_message], check=True)
-        subprocess.run(["git", "push"], check=True)
+        subprocess.run(["git", "push","upstream","main"], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")
         sys.exit(1)
